@@ -1,36 +1,36 @@
 1.安装完成设置用户信息
-git config --global user.name "Your Name"
-git config --global user.mail "your mail"
+	git config --global user.name "Your Name"
+	git config --global user.mail "your mail"
 2.查看自己的用户名和邮箱
-git config user.name
-git confgi user.mail
+	git config user.name
+	git confgi user.mail
 3.修改用户信息命令与1一样
 4.git init
-把当前工作目录转换成git可管理的仓库
+	把当前工作目录转换成git可管理的仓库
 5.git add filename
-把指定文件添加到git仓库
+	把指定文件添加到git仓库
 6.git commit -m "xxx"
--m:本次提交的说明
-提交所有的修改
+	-m:本次提交的说明
+	提交所有的修改
 7.git status
-查看工作空间状态（主要是看自上次提交后工作空间又发生了哪些变化）
+	查看工作空间状态（主要是看自上次提交后工作空间又发生了哪些变化）
 8.git diff <filename>
-查看指定文件自上次提交后发生了哪些改变
+	查看指定文件自上次提交后发生了哪些改变
 9.git log
-从近到远的输出提交日志，加上--pretty=oneline参数使输出简洁化
+	从近到远的输出提交日志，加上--pretty=oneline参数使输出简洁化
 10.git reset --hard HEAD~
-git中用HEAD表示当前版本，HEAD~表示上一个版本，HEAD~~表示上上版本，HEAD~n表示前n个版本
-git reset表示回退到指定版本
-当回退到前面版本后，git log就只会展示回退到的那个版本位置，那么问题来了，万一从当前版本回退到了上一版本，最后又想回到当前版本，该怎么办了？
-git reset除了可以用HEAD来指定版本以外还可以用版本号来指定，版本号可以在git log里看见，
-eg：git reset --hard 1094a(版本号很长，但只用输前面几位）
-但此时还有问题，git log的输出指导当前版本为止，那我们要怎么才能知道回退前的某个版本号呢？
-这就要借助git reflog了，git reflog简单来讲就是把你所有的操作记录列出来，所以commit时带上-m的参数就体现出来了，否则的话即使列出了所有的版本号，
-你也不知道具体要穿梭到哪个版本
-git reset --hard HEAD：注意此条命令并不是回退到当前版本，经测试，该条命令的作用更像是清空缓存区，不会影响工作区
+	git中用HEAD表示当前版本，HEAD~表示上一个版本，HEAD~~表示上上版本，HEAD~n表示前n个版本
+	git reset表示回退到指定版本
+	当回退到前面版本后，git log就只会展示回退到的那个版本位置，那么问题来了，万一从当前版本回退到了上一版本，最后又想回到当前版本，该怎么办了？
+	git reset除了可以用HEAD来指定版本以外还可以用版本号来指定，版本号可以在git log里看见，
+	eg：git reset --hard 1094a(版本号很长，但只用输前面几位）
+	但此时还有问题，git log的输出指导当前版本为止，那我们要怎么才能知道回退前的某个版本号呢？
+	这就要借助git reflog了，git reflog简单来讲就是把你所有的操作记录列出来，所以commit时带上-m的参数就体现出来了，否则的话即使列出了所有的版本号，
+	你也不知道具体要穿梭到哪个版本
+	git reset --hard HEAD：注意此条命令并不是回退到当前版本，经测试，该条命令的作用更像是清空缓存区，不会影响工作区
 
 11.git diff HEAD -- <filename>
-查看工作空间的指定文件与版本库里的差异
+	查看工作空间的指定文件与版本库里的差异
 12.git checkout -- <filename>
-把指定文件修改到上一次add或commit时的状态，具体取决于在执行该命令时是add命令离他近还是commit离他近
+	把指定文件修改到上一次add或commit时的状态，具体取决于在执行该命令时是add命令离他近还是commit离他近
 
